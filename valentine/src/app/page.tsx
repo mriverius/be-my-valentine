@@ -83,7 +83,7 @@ export default function Home() {
   }, [photoTimer, showPhotos]);
 
   return (
-    <div className="h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 relative overflow-hidden" style={{minHeight: '100vh', height: '100dvh'}}>
       {/* Floating particles background */}
       <div className="fixed inset-0 pointer-events-none">
         {particles.map((particle, i) => (
@@ -123,7 +123,7 @@ export default function Home() {
       )}
 
       {/* Main container - always centered */}
-      <div className="h-screen flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4" style={{minHeight: '100vh', height: '100dvh'}}>
         <div className="w-full max-w-lg mx-auto text-center">
           
           {/* Header - Always visible */}
@@ -211,7 +211,7 @@ export default function Home() {
       {/* Photo Memories - Dynamic popup animation */}
       {showPhotos && (
         <div className="fixed inset-0 bg-gradient-to-br from-pink-100/90 via-rose-100/90 to-pink-200/90 backdrop-blur-lg z-50 overflow-hidden">
-          <div className="h-screen relative">
+          <div className="min-h-screen relative" style={{minHeight: '100vh', height: '100dvh'}}>
             <h3 className="absolute top-8 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-pink-700 text-center animate-fadeInUp glow-text z-10">
               Our Beautiful Memories 📸💕
             </h3>
