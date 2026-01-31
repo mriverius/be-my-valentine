@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-dancing: 'Dancing Script', cursive;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes heartRain {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-15px) scale(1.1) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-heartRain {
+  animation: heartRain 4s linear infinite;
+}
+
+.animate-heartFloat {
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+/* Glow Effects */
+.glow-text {
+  text-shadow: 0 0 10px rgba(244, 114, 182, 0.5), 0 0 20px rgba(244, 114, 182, 0.3), 0 0 30px rgba(244, 114, 182, 0.2);
+}
+
+.glow-emoji {
+  filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.6)) drop-shadow(0 0 16px rgba(244, 114, 182, 0.4));
+}
+
+.glow-card {
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.3), 0 0 40px rgba(244, 114, 182, 0.2), 0 0 60px rgba(244, 114, 182, 0.1);
+}
+
+.glow-checkbox {
+  box-shadow: 0 0 15px rgba(244, 114, 182, 0.2);
+}
+
+.checkbox-selected {
+  box-shadow: 0 0 25px rgba(244, 114, 182, 0.6), 0 0 50px rgba(244, 114, 182, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+.glow-photo {
+  filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.4));
+}
+
+/* Dynamic Photo Animations */
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100vw) rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100vw) rotate(180deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100vh) rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100vh) rotate(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTopLeft {
+  from {
+    transform: translate(-100vw, -100vh) rotate(-225deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTopRight {
+  from {
+    transform: translate(100vw, -100vh) rotate(225deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottomLeft {
+  from {
+    transform: translate(-100vw, 100vh) rotate(-135deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottomRight {
+  from {
+    transform: translate(100vw, 100vh) rotate(135deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0) rotate(720deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-slideFromLeft {
+  animation: slideFromLeft 1.5s ease-out forwards;
+}
+
+.animate-slideFromRight {
+  animation: slideFromRight 1.5s ease-out forwards;
+}
+
+.animate-slideFromTop {
+  animation: slideFromTop 1.5s ease-out forwards;
+}
+
+.animate-slideFromBottom {
+  animation: slideFromBottom 1.5s ease-out forwards;
+}
+
+.animate-slideFromTopLeft {
+  animation: slideFromTopLeft 1.5s ease-out forwards;
+}
+
+.animate-slideFromTopRight {
+  animation: slideFromTopRight 1.5s ease-out forwards;
+}
+
+.animate-slideFromBottomLeft {
+  animation: slideFromBottomLeft 1.5s ease-out forwards;
+}
+
+.animate-slideFromBottomRight {
+  animation: slideFromBottomRight 1.5s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 1.5s ease-out forwards;
+}
+
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
